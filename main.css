@@ -1,0 +1,135 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Almarai", sans-serif;
+}
+
+.bg-primary {
+  background-color: #8a1538 !important;
+  color: white;
+}
+
+.bg-secondary {
+  background-color: #5b0d25 !important;
+  color: white;
+}
+
+.t-align-c {
+  text-align: center;
+}
+
+#header {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 80%);
+  border-bottom: solid 20px #5b0d25;
+  height: 20rem;
+}
+
+#header-background {
+  background-image: url("imgs/pattern.png");
+  height: 100%;
+  width: 100%;
+}
+
+#header-background .title {
+  direction: rtl;
+  font-size: 50px;
+  margin-right: 100px;
+}
+
+#header-background .title h1 {
+  font-weight: 800;
+  font-size: 70px;
+}
+
+#header-background .title h1:last-child {
+  font-size: 90px;
+}
+
+#logo-header {
+  position: absolute;
+  z-index: 999;
+  left: 100px;
+  top: 60px;
+}
+
+#logo-img {
+  -webkit-filter: drop-shadow(5px 5px 50px #222);
+  filter: drop-shadow(5px 5px 30px #222);
+  height: 300px;
+}
+
+#header-border {
+  height: 200px;
+  background: #5b0d25;
+  position: relative;
+  top: -203px;
+  z-index: -9;
+}
+
+/* Qatar Word */
+.qatar-word {
+  margin-top: 30px;
+}
+
+.qatar-word img {
+  width: 400px;
+}
+
+.main-header {
+  margin-top: 50px;
+}
+
+.title {
+  direction: rtl;
+}
+
+.flag img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border: 1px solid #8a1538;
+}
+
+.flag + h5 {
+  margin: auto 4px;
+}
+
+.card {
+  border: none !important;
+  overflow: hidden;
+}
+
+.teams {
+  height: 120px;
+}
+.teams .box {
+  height: 100%;
+}
+
+.teams .groups {
+  text-align: center;
+}
+
+.teams .groups h1 {
+  margin: 0;
+}
+
+.teams .groups h6 {
+  margin-block: 6px;
+}
+
+.flag-right {
+  border-right: solid 5px #5b0d25;
+}
+
+.flag-left {
+  border-left: solid 5px #5b0d25;
+}
+
+.info {
+  height: 100%;
+}
