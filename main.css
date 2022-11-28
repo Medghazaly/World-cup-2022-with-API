@@ -5,7 +5,40 @@
 }
 
 body {
-  font-family: "Almarai", sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+
+ul {
+  list-style: none;
+  margin-bottom: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8a1538;
+}
+
+.btn-up {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  right: -50px;
+  bottom: 30px;
+  z-index: 999;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.btn-up.show {
+  right: 10px;
 }
 
 .bg-primary {
@@ -18,31 +51,65 @@ body {
   color: white;
 }
 
+.br-left li {
+  position: relative;
+}
+
+.overflow {
+  overflow-x: auto;
+}
+
+.cards {
+  min-width: 780px;
+}
+
+.team-1 {
+  gap: 1rem;
+}
+
+.br-left li:first-child::before,
+.br-left li:nth-child(2)::before {
+  content: "";
+  height: 100%;
+  width: 5px;
+  background-color: #4285f4;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .t-align-c {
   text-align: center;
 }
 
 #header {
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 80%);
+  /* clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%); */
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
   border-bottom: solid 20px #5b0d25;
   height: 20rem;
+  position: relative;
+  z-index: 2;
 }
 
 #header-background {
   background-image: url("imgs/pattern.png");
   height: 100%;
   width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 #header-background .title {
-  direction: rtl;
   font-size: 50px;
   margin-right: 100px;
 }
 
 #header-background .title h1 {
   font-weight: 800;
-  font-size: 70px;
+  font-size: 50px;
+  font-family: "Patrick Hand", cursive;
+  margin-bottom: 0;
+  font-family: "Dancing Script", cursive;
 }
 
 #header-background .title h1:last-child {
@@ -52,7 +119,7 @@ body {
 #logo-header {
   position: absolute;
   z-index: 999;
-  left: 100px;
+  right: 60px;
   top: 60px;
 }
 
@@ -70,28 +137,111 @@ body {
   z-index: -9;
 }
 
-/* Qatar Word */
-.qatar-word {
-  margin-top: 30px;
+/* Header Memu */
+#header-menu {
+  background-color: #fff;
+  clip-path: polygon(0 33%, 100% 0, 100% 100%, 0% 100%);
+  height: 6rem;
+  position: relative;
+  top: -39px;
+  z-index: 1;
+  border-top: 20px solid;
+  border-bottom: 1px solid #5b0d25;
+  display: flex;
+  align-items: flex-end;
+}
+
+.header-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(100% - 220px);
+  height: 60px;
+  padding-left: 3rem;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.overlay {
+  display: flex;
+  position: absolute;
+  z-index: 99999;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.9);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+  transition: all 0.3s;
+}
+
+.overlay .links-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  text-align: center;
+}
+
+.overlay a {
+  color: #8a1538;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.xmark {
+  font-size: 40px;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  color: #5b0d25;
+  cursor: pointer;
+}
+
+#header-menu .links a {
+  color: #5b0d25;
+  transition: all 0.3s;
+}
+
+#header-menu .links a:hover {
+  color: #8a1538;
 }
 
 .qatar-word img {
-  width: 400px;
+  width: 200px;
+}
+
+.bars {
+  font-size: 38px;
+  color: #000;
+  position: absolute;
+  display: none;
+  z-index: 10;
+  right: 30px;
+  top: 30px;
+  cursor: pointer;
+}
+
+.active {
+  clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
 }
 
 .main-header {
   margin-top: 50px;
 }
 
-.title {
-  direction: rtl;
-}
-
 .flag img {
-  width: 50px;
+  width: 60px;
   height: 50px;
   object-fit: cover;
-  border: 1px solid #8a1538;
+  border: 1px solid #000;
+  border-radius: 3px;
 }
 
 .flag + h5 {
@@ -108,6 +258,7 @@ body {
 }
 .teams .box {
   height: 100%;
+  text-align: center;
 }
 
 .teams .groups {
@@ -120,6 +271,9 @@ body {
 
 .teams .groups h6 {
   margin-block: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .flag-right {
@@ -132,4 +286,167 @@ body {
 
 .info {
   height: 100%;
+}
+
+.tbody tr {
+  cursor: pointer;
+}
+
+.tbody tr:hover {
+  background-color: #5b0d248f;
+  color: #fff;
+}
+
+.tbody th,
+.tbody td {
+  padding-block: 0;
+}
+
+.tbody th div,
+.tbody td div {
+  height: 59px;
+  display: flex;
+  align-items: center;
+}
+
+.tbody td img {
+  width: 40px;
+  height: 30px;
+  object-fit: cover;
+  border-radius: 3px;
+  border: 1px solid #8a1538;
+}
+
+.flag-2 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.flag-2 h5 {
+  margin-bottom: 0;
+}
+
+.goals {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.date {
+  margin-left: 5px;
+}
+
+/* Media Query */
+
+@media (min-width: 1200px) {
+  #header-menu {
+    height: 8rem;
+    top: -65px;
+  }
+
+  .header-links {
+    width: calc(100% - 280px);
+  }
+
+  #logo-header {
+    top: 100px;
+  }
+}
+
+@media (max-width: 1199px) {
+  #header {
+    height: 12rem;
+  }
+
+  #logo-img {
+    height: 250px;
+  }
+
+  #header-background .title h1 {
+    font-size: 35px;
+  }
+
+  #header-background .title h1:last-child {
+    font-size: 55px;
+  }
+}
+
+@media (max-width: 767px) {
+  #logo-img {
+    display: none;
+  }
+
+  #header-background .title {
+    padding-left: 1rem !important;
+  }
+
+  #header-menu {
+    border-bottom: none;
+  }
+
+  .header-links {
+    width: 100%;
+    padding-inline: 1rem;
+    justify-content: center;
+  }
+
+  .links {
+    display: none;
+  }
+
+  .bars {
+    display: block;
+  }
+
+  .flag img {
+    width: 45px;
+    height: 35px;
+  }
+
+  .matches .card {
+    border-radius: 0 !important;
+  }
+
+  .teams {
+    height: 90px;
+  }
+
+  .flag-left,
+  .flag-right {
+    border: none;
+  }
+
+  .matches .flag img {
+    width: 35px;
+    height: 25px;
+    margin-bottom: 5px;
+  }
+
+  .matches .flag + h5 {
+    font-size: 17px;
+  }
+
+  .info h1,
+  .info h6 {
+    font-size: 10px;
+  }
+
+  .dates {
+    padding: 0;
+  }
+
+  .dates h6 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .table {
+    width: 96% !important;
+  }
+
+  .scorers {
+    display: flex;
+    justify-content: center;
+  }
 }
